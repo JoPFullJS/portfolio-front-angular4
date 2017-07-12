@@ -1,0 +1,33 @@
+<div class="inbox" *ngFor="let experience of experiences">
+
+	<div class="organisation">
+		<div class="name-organisation"><p>{{ experience.entreprise }}</p></div>
+		<div class="titre-souligne"><div class="black-ligne"></div></div>
+		<div class="periode"><p>{{ experience.periode }}</p></div>
+	</div>
+
+	<div class="poste-environement">
+		<div class="poste-occupe">
+			<div class="techno-img"><img src="/assets/img/competences/{{ experience.techno_poste }}.png" alt="{{ experience.techno_poste }}"></div>
+			<div class="name-poste-occupe"><h3>{{ experience.poste }}</h3></div>
+		</div>
+		<div class="env-travx">
+			<h3>Environement technique</h3>
+			<div class="lg-env-travx">
+				<p>{{ experience.environement }}</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="mission">
+		<div class="etiquette-mission"><p>Mission :</p></div>
+		<div class="detail-mission">
+			<p class="titre-mission">{{ experience.titre_mission }}</p>
+				{{ experience.description }}
+		</div>
+
+	</div>
+
+	<div class="separateur-exp"></div>
+
+</div>

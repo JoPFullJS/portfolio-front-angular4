@@ -1,0 +1,38 @@
+<section id="conteneur" *ngIf="categories">
+
+
+	<header class="header-main-travaux header-general" [ngStyle]="{'background-image': 'url(/assets/img/header/interventions.jpg)'}">
+		<div class="header-cat">
+			<p>{{categories.nom}}</p>
+		</div>
+		<div class="header-accroche">
+			<h1>{{categories.description}}</h1>
+		</div>
+	</header>
+
+	<div class="page-travaux article-section">
+
+		<div class="filter-categories">
+			<div class="je-filtre"><p>Selectionner une compétence pour {{ categories.nom }}:</p></div>
+			<div class="choix-categorie">
+				<!-- [(ngModel)]="selectedOption" (ngModelChange)="updateOption($event)" -->
+				<select id="list-choix" [(ngModel)]="selectedOption" (ngModelChange)="updateOption($event)" (load)="selectDomaine(categories.id)" >
+				
+					<option *ngFor="let competence of categories.competences" value="{{ competence.id }}" >{{ competence.nom }}</option>
+					
+				</select> 
+
+				<!-- <p *ngFor="let competence of categories.competences" >{{ competence.nom }}</p> -->
+
+			</div>
+		</div>
+
+		<div class="group-travaux">
+
+			<travaux-domaine [nomDomaine]="categories.id"></travaux-domaine>
+
+		</div>
+	</div>
+
+
+</section>

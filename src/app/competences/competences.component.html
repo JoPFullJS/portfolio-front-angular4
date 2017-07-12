@@ -1,0 +1,13 @@
+<div class="block-competences" *ngFor="let competence of competences">
+				
+	<div class="icon-competences">
+		<img src="/assets/img/competences/{{ competence.slug }}.png" alt="{{ competence.nom }}">
+	</div>
+	<div class="info-competences">
+		<div class="name-competences"><span>{{ competence.nom }}</span></div>
+		<div class="barre-competences">
+			<div class="niveau-html"><div class="graduation" [ngStyle]="{'width': competence.taux + '%'}"></div></div>
+		</div>
+	</div>
+	
+</div>

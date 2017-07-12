@@ -1,0 +1,24 @@
+<div class="list-travaux" *ngFor="let travaux of travaux">
+
+	<div class="info-user">
+		<div class="image">
+			<img src="/assets/img/travaux/etiquettes/{{ travaux.slug }}.jpg" alt="{{ travaux.titre }}">
+			<a [routerLink]="['/trauvaux', travaux.id_cat_travx, travaux.id_comp_travx, travaux.id]" title="{{ travaux.titre }}" class="info-generales">
+				<div class="info-glissante">
+					<div class="techno">
+						<img src="/assets/img/competences/{{ travaux.competences.slug }}_small.png" alt="{{ travaux.titre }}">
+					</div>
+					<div class="separateur"></div>
+					
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<header class="titre-travaux">
+		<p>
+			<a [routerLink]="['/travaux', travaux.id_cat_travx, travaux.id_comp_travx, travaux.id]" title="{{ travaux.titre }}">{{ travaux.titre }}</a>
+		</p>
+	</header>
+
+</div>

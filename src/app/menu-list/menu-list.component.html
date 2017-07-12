@@ -1,0 +1,45 @@
+<header class="menu-desktop">
+	<div class="container-fluid">
+		<div id="hamburger">
+			<span class="top"></span>
+			<span class="middle"></span>
+			<span class="bottom"></span>
+		</div>
+		<div id="logo-jw">
+			<a [routerLink]="['/accueil']" title="Jopha Freddy"><img src="/assets/img/main/jophafreddy.png" alt="Jopha Freddy"></a>
+		</div>
+		
+		<nav class="navigation margin-left-30 visible-lg visible-md">
+			<ul class="nav-haut">
+				<li class="group-desktop" (click)="togglePresentation()">
+					<a title="Services" class="white lh-50-pg-25 hover deco icon-sub block-sub" id="services">Présentation</a>
+						<ul class="survol-services">
+							<li><a class="survol-block" href="presentation/qui-suis-je/" title="Qui suis-je ?" (click)="hidePresentation()">Qui suis-je ?</a></li>
+							<li><a class="survol-block" title="Domaines d'intervention" [routerLink]="['/interventions']">Domaines d'intervention</a></li>
+							<li><a class="survol-block" href="presentation/mes-services/" title="Mes services">Mes services</a></li>
+						</ul>
+				</li>
+				<li class="group-desktop"><a [routerLink]="['/competences']" title="Compétences" class="white lh-50-pg-25 hover deco">Compétences</a></li>
+				<li class="group-desktop" (click)="toggleTravaux()" >
+					<a title="Travaux" class="white lh-50-pg-25 hover deco icon-sub block-sub" id="blog" >Travaux</a>
+						<ul class="survol-blog">
+							
+							<li><a class="survol-block" [routerLink]="['/travaux', '1']" title="front End">Front End</a></li>
+							<li><a class="survol-block" [routerLink]="['/travaux', '2']" title="Back End">Back End</a></li>
+							<li><a class="survol-block" [routerLink]="['/travaux', '3']" title="UI Design">UI Design</a></li>
+						</ul>
+				</li>
+				<li class="group-desktop"><a [routerLink]="['/contact']" title="Contact" class="white lh-50-pg-25 hover deco">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="social-media visible-lg visible-md" >	
+			<a class="icon-share"><img src="/assets/img/main/share-icon.png" alt="social media" (click)="toggleSocial()"></a>
+				<ul class="block-share" >
+					<li><a href="" title="GitHub" class="share-desk share-desk-top icon-github"><span>GitHub</span></a></li>
+					<li><a href="" title="Pintrest" class="share-desk icon-pinterest"><span>Pinterest</span></a></li>
+					<li><a href="" title="Linkedin" class="share-desk icon-linkedin"><span>Linkedin</span></a></li>
+					<li><a href="" title="Google Plus" class="share-desk share-desk-bottom icon-google"><span>Google +</span></a></li>
+				</ul>
+		</div>
+	</div>
+</header>

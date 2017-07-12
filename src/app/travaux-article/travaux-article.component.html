@@ -1,0 +1,101 @@
+<section id="conteneur" *ngIf="travaux">
+
+
+	<header class="header-main-travaux">
+
+		<div class="header-general">
+			<div class="header-cat">
+				<p>{{ travaux.competences.nom }}</p>
+			</div>
+			<div class="header-accroche">
+				<h1>{{ travaux.titre }}</h1>
+			</div>
+		</div>
+
+		<div class="block-aside article-section">
+			<div class="navigation-travaux">
+				<nav>
+					<ul>
+						<li class="rubriques-nav home"><a [routerLink]="['/accueil']"><span class="glyphicon glyphicon-home"></span></a></li>
+						<li class="rubriques-nav"><a [routerLink]="['/travaux', travaux.id_cat_travx]">{{ travaux.categories.nom }}</a></li>
+						<li><a [routerLink]="['/travaux', travaux.id_cat_travx, travaux.id_comp_travx]">{{ travaux.competences.nom }}</a></li>
+					</ul>
+				</nav>
+			</div>
+
+
+			<div class="navigation-detaille">
+				<nav>
+					<ul>
+						<li class="menu-article"><a class="projet">Introduction</a></li>
+						<li class="menu-article"><a class="env-techn">Environement technique</a></li>
+						<li *ngIf="travaux.fonctionnel" class="menu-article"><a class="comp-fonct">Compétences fonctionnelles</a></li>
+						<li class="menu-article"><a class="sources">Sources</a></li>
+					</ul>
+				</nav>
+			</div>	
+
+		</div>
+
+	</header>
+
+	<section class="content-travaux article-section">
+
+		<div id="projet">
+			<h2>Présentation du projet</h2>
+			<div class="titre-souligne"><div class="blue-ligne"></div></div>
+			<div class="content-projet">
+				{{ travaux.projet }}
+			</div>
+		</div>
+
+		<div id="env-techn">
+			<h2>Environement technique</h2>
+			<div class="titre-souligne"><div class="blue-ligne"></div></div>
+			<div class="content-techn">
+
+					<div class="technos-web" *ngFor="let technique of travaux.technique | envTravaux:','">
+						<div class="img-technos-web">
+							<img src="/assets/img/competences/{{ technique }}.png" alt="{{ technique }}">
+						</div>
+						<div class="titre-technos-web"><p>{{ technique }}</p></div>
+					</div>
+
+
+			</div>
+		</div>
+
+		<div id="comp-fonct">
+		<h2>Compétences fonctionnelles</h2>
+			<div class="titre-souligne"><div class="blue-ligne"></div></div>
+			<div class="content-fonct">
+
+				<div class="fonctionnel-web"  *ngFor="let fonctionnel of travaux.fonctionnel | envTravaux:'|'">
+					<div class="plus-fonct">
+						<span class="glyphicon glyphicon-plus"></span>
+					</div>
+					<div class="description-fonct">
+						<p>{{ fonctionnel }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="sources">
+			<h2>Vous voulez en voir d'avantage ?</h2>
+			<div class="titre-souligne"><div class="blue-ligne"></div></div>
+			<div class="content-sources">
+
+				<div class="img-source" *ngFor="let fonctionnel of travaux.source | envTravaux:','">
+
+					<a *ngIf="fonctionnel" href="{{ fonctionnel | sourceTravaux:'lien' }}" title="{{ fonctionnel | sourceTravaux:'nom' }}"><img src="/assets/img/sources/{{ fonctionnel | sourceTravaux:'nom' }}.png" alt="{{ fonctionnel | sourceTravaux:'nom' }}"></a>
+					
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+
+
+</section>

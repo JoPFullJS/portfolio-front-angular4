@@ -1,0 +1,43 @@
+<section id="conteneur" *ngIf="intervention">
+	<header class="header-sub-menu  header-general" [ngStyle]="{'background-image': 'url(/assets/img/header/interventions.jpg)'}">
+		<div class="header-cat">
+			<p>Domaines d'intervention</p>
+		</div>
+		<div class="header-accroche">
+			<h1>{{ intervention.titre }}</h1>
+		</div>
+
+		<div class="header-accroche nav-accroche">
+			<a [routerLink]="['/interventions']">retour à la liste</a>
+		</div>
+	</header>
+
+	<section class="qui-suis-je article-section">
+
+		<div class="who-info">
+
+			<div class="sub-title-present">
+				<h3>{{ intervention.titre }}</h3>
+				<div class="sub-titre-souligne"><div class="black-ligne"></div></div>
+			</div>
+
+			<div class="definition-techno">
+				<p>{{ intervention.definition }}</p>
+			</div>
+
+		</div>
+	 	<div class="who-info" *ngIf="intervention.utilite">
+		
+			<div class="sub-title-present">
+				<h3>{{ intervention.nom }} dans mes projets</h3>
+				<div class="sub-titre-souligne"><div class="black-ligne"></div></div>
+			</div>
+
+			<div class="techno-projet">
+				<p>{{ intervention.utilite }}</p>
+			</div>
+
+		</div>
+			
+	</section>
+</section>

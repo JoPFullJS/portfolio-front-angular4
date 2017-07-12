@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
+import { MenuListComponent } from './menu-list/menu-list.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: []
 })
 export class AppComponent {
-  title = 'app';
+  
 }
